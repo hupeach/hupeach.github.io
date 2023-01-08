@@ -1,3 +1,54 @@
-cd username.github.io
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>摇红包</title>
+<link rel="stylesheet" href="css/csshake.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/zepto.min.js"></script>
+<script src="js/red.js"></script>
+</head>
+<body>
+<!-- 红包 -->
+<div class="red"><!-- shake-chunk -->
+    <span style="background-image: url(img/red-w.png);"></span>
+    <button class="redbutton" type="button" id="hovertreeOpen">拆红包</button>
+    <div class="red-jg">
+        <h1 id="hwqKey">CSDN</h1>
+        <h5 id="hwqValue">我喜欢你！</h5>
+    </div>
+</div>
+<!-- End 红包 -->
+<!-- 按钮 -->
+<div class="t-btn">
+    <button id="hewenqiAgain">再抽一次</button>
+</div>
+<!-- End 按钮 -->
 
-echo "Hello World" > index.html
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+    <script>
+        function hoverTreeRandom(n) {
+            return Math.floor(Math.random() * n + 1)
+        }
+        var hovertreePrize = new Array();
+        hovertreePrize[0] = { "key": "恭喜您：", "value": "获得88元代金卷！" };
+        hovertreePrize[1] = { "key": "恭喜您：", "value": "获得苹果八袋！" };
+        hovertreePrize[2] = { "key": "祝愿您：", "value": "新年快乐，大吉大利！" };
+        hovertreePrize[3] = { "key": "祝愿您：", "value": "笑口常开，天天开心！" };
+        hovertreePrize[4] = { "key": "祝愿您：", "value": "心想事成，美梦成真！" };
+        hovertreePrize[4] = { "key": "祝愿您：", "value": "事业顺利，财源滚滚！" };
+        var h_index = 0;
+        document.getElementById("hove"+"rtreeOpen").addEventListener("click", function () {
+            h_index = hoverTreeRandom(hovertreePrize.length)-1;
+            document.getElementById("hwqKey").innerText = hovertreePrize[h_index].key;
+            document.getElementById("hwqValue").innerText = hovertreePrize[h_index].value;
+        })
+    </script>
+</body>
+</html>
+————————————————
+版权声明：本文为CSDN博主「IT邦德」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_41645135/article/details/122154423
